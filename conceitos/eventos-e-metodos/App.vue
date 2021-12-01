@@ -19,7 +19,7 @@
         :key="`${task}-${index}`"
         class="task-item"
         :class="{
-          'line-through': task.isDone
+          'line-through': task.isDone /*habilita a classe css conforme isDone da task*/
         }"
       >
         {{task.name}}
@@ -62,7 +62,7 @@ export default {
     complete(task) {
       this.tasks = this.tasks.map(t => {
         if(t.name === task.name) {
-          return {...t, isDone: !t.isDone}
+          return {...t, isDone: !t.isDone} /*altera a task mudando sua propriedade isDone*/
         }
         return {...t}
       })
