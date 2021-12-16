@@ -29,7 +29,7 @@ export default {
     onMounted(() => {
       const token = window.localStorage.getItem('token')
       if (token) {
-        router.push({ name: 'Home' })
+        router.push({ name: 'Feedbacks' })
       }
     })
 
@@ -40,7 +40,9 @@ export default {
     }
 
     function handleAccountCreate () {
-
+      modal.open({
+        component: 'ModalCreateAccount'
+      })
     }
 
     return {
